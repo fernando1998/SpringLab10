@@ -92,18 +92,6 @@ public class EmployeeDAOTest {
 	
 	//----------------------------------------------------------------------
 
-	@Test 
-	public void testFindEmployeeByLastname() {
-		try {
-			Employee emp = employeeDAO.findEmployeeByLastName("Cruz Farfan");
-			
-			logger.info(emp.toString());
-		}catch (EmptyResultException e) {
-			fail(e.getMessage());
-		}catch (DAOException e) {
-			fail(e.getMessage());
-		}
-	}
 	
 //--------------------------------------------------------------------------------	
 

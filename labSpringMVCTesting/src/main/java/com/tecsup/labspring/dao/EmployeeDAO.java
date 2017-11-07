@@ -4,9 +4,8 @@ import java.util.List;
 
 import com.tecsup.labspring.exception.DAOException;
 import com.tecsup.labspring.exception.EmptyResultException;
+import com.tecsup.labspring.exception.LoginException;
 import com.tecsup.labspring.model.Employee;
-
-
 
 public interface EmployeeDAO {
 
@@ -24,6 +23,9 @@ public interface EmployeeDAO {
 
 	List<Employee> findEmployeesByName(String name) throws DAOException, EmptyResultException;
 	
-	Employee findEmployeeByLastName(String lastname) throws DAOException, EmptyResultException;
+	List<Employee> findEmployeeLastName(String lastname) throws DAOException, EmptyResultException;
+	
+	Employee validate(String login, String pwd) throws LoginException, DAOException;
+
 
 }
