@@ -55,19 +55,14 @@ package com.tecsup.labspring.dao.jdbc;
 
 			Object[] params = new Object[] { login, password, lastname, firstname, salary, dptId };
 
-			Employee emp = null;
+			//Employee emp = null;
 			
 			try {
 				// create
 				jdbcTemplate.update(query, params);
-				// search
-				emp = this.findEmployeeByLogin(login);
 
-			} catch (EmptyResultException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			} catch (Exception e) {
-				logger.info("Error: " + e.getMessage());
+				logger.error("Error: " + e.getMessage());
 				throw new DAOException(e.getMessage());
 			}
 			
@@ -89,13 +84,16 @@ package com.tecsup.labspring.dao.jdbc;
 			}
 		}
 
+
 		@Override
 		public void update(String  login, String password, String lastname, String firstname, int salary, int dptId) throws DAOException {
 
-			String query = "UPDATE employees SET password = ?, first_name =?, last_name = ?, salary = ?, department_id = ? WHERE login = ?";
 
-			Object[] params = new Object[] { password, lastname, firstname, salary, dptId, login };
+			String query = "UPDATE employees SET password = ?, first_name =?, last_name = ?, salary = ? WHERE login = ?";
 
+			Object[] params = new Object[] { password, lastname, firstname, salary, login };
+
+			
 			try {
 				jdbcTemplate.update(query, params);
 			} catch (Exception e) {
@@ -103,6 +101,8 @@ package com.tecsup.labspring.dao.jdbc;
 				throw new DAOException(e.getMessage());
 			}
 		}
+
+
 
 
 		@Override
@@ -165,6 +165,32 @@ package com.tecsup.labspring.dao.jdbc;
 				throw new DAOException(e.getMessage());
 			}
 		}
+		//---------------------------------------------------------
+		//prueba de martes
+		@Override
+		public List<Employee> findEmployeesByNameLastnameSalary(String name,String lastname, int salary) throws DAOException, EmptyResultException {
+
+			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees WHERE upper(first_name) like upper(?) ";
+
+			Object[] params = new Object[] { "%" + name + "%" };
+
+			try {
+
+				List<Employee> employees = jdbcTemplate.query(query, params, new EmployeeMapper());
+				//
+				return employees;
+
+			} catch (EmptyResultDataAccessException e) {
+				throw new EmptyResultException();
+			} catch (Exception e) {
+				logger.info("Error: " + e.getMessage());
+				throw new DAOException(e.getMessage());
+			}
+		}
+		
+		
+		
+		//----------------------------------------------------------
 		
 	
 
@@ -217,4 +243,10 @@ package com.tecsup.labspring.dao.jdbc;
 				throw new DAOException(e.getMessage());
 			}
 		}
-		}
+		
+	
+
+
+		
+		
+}

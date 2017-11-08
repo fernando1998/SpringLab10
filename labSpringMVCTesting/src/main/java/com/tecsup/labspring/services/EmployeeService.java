@@ -15,5 +15,12 @@ public interface EmployeeService {
 	
 	//List <Employee> fin
 	
+	
+void update(String login, String password, String lastname, String firstname, int salary, int dptId)
+		throws DAOException;
+
+void delete(String login) throws DAOException;
+
+void create(String login, String password, String lastname, String firstname, int salary, int deptId) throws DAOException;
 
 }

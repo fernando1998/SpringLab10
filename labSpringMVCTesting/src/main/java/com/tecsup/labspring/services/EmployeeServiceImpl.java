@@ -30,5 +30,29 @@ public class EmployeeServiceImpl implements EmployeeService {
 		List<Employee> emps = employeeDAO.findAllEmployees();
 		return emps;
 	}
+	
+	@Override
+	public void update(String login, String password, String lastname, String firstname, int salary, int dptId)
+			throws DAOException {
+	
+		employeeDAO.update(login, password, lastname, firstname, salary, dptId);
+	}
+
+	@Override
+	public void delete(String login) throws DAOException {
+		 
+		employeeDAO.delete(login);
+	
+	}
+
+	@Override
+	public void create(String login, String password, String lastname, String firstname, int salary, int dptId)
+			throws DAOException {
+	
+		employeeDAO.create(login, password, lastname, firstname, salary, dptId);
+
+	}
+
+	
 
 }
