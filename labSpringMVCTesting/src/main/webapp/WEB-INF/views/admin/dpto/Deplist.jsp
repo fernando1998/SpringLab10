@@ -61,7 +61,7 @@
 				<br /> <a href="<%=request.getContextPath()%>/admin/dpto/createDepform"
 					class="btn btn-success"><i class="glyphicon glyphicon-edit"></i>
 					Create Department</a>
-					<a href="<%=request.getContextPath()%>/admin/menu"
+					<a href="<%=request.getContextPath()%>/user/menu"
 					class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>
 					Menu</a>
 			</div>

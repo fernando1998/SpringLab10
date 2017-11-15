@@ -32,11 +32,20 @@ public class EmployeeController {
 	//private DepartmentService departmentService;
 	
 	
-	@GetMapping("/admin/menu")
+	@GetMapping("/user/menu")
 	public String menu() {
 
-		return "/admin/menu";
+		return "/user/menu";
 	}
+	
+	@GetMapping("/user/403")
+	public String accessDenied() {
+
+		return "/user/403";
+	}
+	
+	
+	
 	
 	@GetMapping("/admin/emp/list")
 	public String list(@ModelAttribute("SpringWeb") Employee employee, ModelMap model) {

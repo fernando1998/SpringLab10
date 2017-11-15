@@ -29,14 +29,6 @@
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
 
-<!-- Se esta Agregando la conexión co la base de datos a travéz de xml -->
-	<beans:bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://localhost:3306/myusers1" />
-		<beans:property name="username" value="root" />
-		<beans:property name="password" value="root" />
-	</beans:bean>
-	
-	
+
+
 </beans:beans>

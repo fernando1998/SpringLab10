@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="1" name="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" time="1.229" errors="0" skipped="0">
+<testsuite tests="3" failures="1" name="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" time="3.284" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\FERNANDO\Documents\workspace-sts-3.8.4.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8077875919857428690.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\FERNANDO\Documents\workspace-sts-3.8.4.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8896438743102455509.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_151/bin/server;C:/Program Files/Java/jre1.8.0_151/bin;C:/Program Files/Java/jre1.8.0_151/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\bin\apache-maven-3.5.0\bin;C:\bin\apache-tomcat-8.5.16\bin;C:\Program Files\Git\cmd;C:\wamp64\bin\php\php7.0.23;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Users\FERNANDO\AppData\Local\Microsoft\WindowsApps;C:\Users\FERNANDO\AppData\Roaming\Composer\vendor\bin;C:\Users\FERNANDO\Desktop\srping-mvc\sts-bundle\sts-3.8.4.RELEASE;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,16 +61,16 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="list" time="1.073">
+  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="list" time="3.041">
     <failure message="Model attribute &apos;employees&apos;
 Expected: a collection with size &lt;43&gt;
-     but: collection size was &lt;37&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Model attribute &apos;employees&apos;
+     but: collection size was &lt;39&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Model attribute &apos;employees&apos;
 Expected: a collection with size &lt;43&gt;
-     but: collection size was &lt;37&gt;
+     but: collection size was &lt;39&gt;
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at org.springframework.test.web.servlet.result.ModelResultMatchers.lambda$attribute$0(ModelResultMatchers.java:58)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:164)
-	at com.tecsup.labspring.controller.EmployeeControllerIntegrationTest.list(EmployeeControllerIntegrationTest.java:53)
+	at com.tecsup.labspring.controller.EmployeeControllerIntegrationTest.list(EmployeeControllerIntegrationTest.java:60)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,36 +111,40 @@ Expected: a collection with size &lt;43&gt;
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
     <system-out>INFO : org.springframework.test.context.web.WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-INFO : org.springframework.test.context.web.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5d76b067, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2a17b7b6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f063c0a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1e6d1014, org.springframework.test.context.transaction.TransactionalTestExecutionListener@76707e36, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@614ddd49]
-INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml]
-INFO : org.springframework.web.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@42f93a98: startup date [Wed Nov 08 12:09:27 COT 2017]; root of context hierarchy
+INFO : org.springframework.test.context.web.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d44fc21, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23faf8f2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2d6eabae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4e7dc304, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64729b1e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10bbd20a]
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+INFO : org.springframework.web.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@eb21112: startup date [Wed Nov 15 11:20:05 COT 2017]; root of context hierarchy
 INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 &apos;javax.inject.Inject&apos; annotation found and supported for autowiring
+INFO : org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml]
+INFO : org.springframework.web.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58c1670b: startup date [Wed Nov 15 11:20:07 COT 2017]; parent: org.springframework.web.context.support.GenericWebApplicationContext@eb21112
+INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 &apos;javax.inject.Inject&apos; annotation found and supported for autowiring
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Deplist],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.DepartmentController.Deplist(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/createDepform],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.DepartmentController.createDepform()
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/createDep],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.DepartmentController.createDep(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/{action}/{department_id}],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.DepartmentController.Depform(java.lang.String,int,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Depeditsave],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.DepartmentController.Depeditsave(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Depdelete],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.DepartmentController.Depdelete(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/{action}/{employee_id}],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.form(java.lang.String,int,org.springframework.ui.ModelMap)
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/delete],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.delete(com.tecsup.labspring.model.Employee,org.springframework.ui.ModelMap)
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/create],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.create(com.tecsup.labspring.model.Employee,org.springframework.ui.ModelMap)
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/list],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.EmployeeController.list(com.tecsup.labspring.model.Employee,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/menu],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.EmployeeController.menu()
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/{employee_id}],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.home(int,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Depeditsave],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.Depeditsave(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/createDepform],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.createDepform()
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/createDep],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.createDep(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/{action}/{department_id}],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.Depform(java.lang.String,int,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/user/menu],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.EmployeeController.menu()
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/editsave],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.editsave(com.tecsup.labspring.model.Employee,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Depdelete],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.Depdelete(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/dpto/Deplist],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.EmployeeController.Deplist(com.tecsup.labspring.model.Department,org.springframework.ui.ModelMap)
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/{employee_id}],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.home(int,org.springframework.ui.ModelMap)
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/admin/emp/createform],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.EmployeeController.createform()
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/user/403],methods=[GET]}&quot; onto public java.lang.String com.tecsup.labspring.controller.EmployeeController.accessDenied()
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/login],methods=[POST]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.LoginController.login(com.tecsup.labspring.model.Employee,org.springframework.ui.ModelMap)
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/logout],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.LoginController.pLogout()
 INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/login],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.LoginController.preLogin()
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@42f93a98: startup date [Wed Nov 08 12:09:27 COT 2017]; root of context hierarchy
-INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@42f93a98: startup date [Wed Nov 08 12:09:27 COT 2017]; root of context hierarchy
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped &quot;{[/logout],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView com.tecsup.labspring.controller.LoginController.pLogout()
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58c1670b: startup date [Wed Nov 15 11:20:07 COT 2017]; parent: org.springframework.web.context.support.GenericWebApplicationContext@eb21112
+INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@58c1670b: startup date [Wed Nov 15 11:20:07 COT 2017]; parent: org.springframework.web.context.support.GenericWebApplicationContext@eb21112
 INFO : org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/resources/**] onto handler &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
-INFO : org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: com.mysql.jdbc.Driver
 INFO : org.springframework.mock.web.MockServletContext - Initializing Spring FrameworkServlet &apos;&apos;
 INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization started
-INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization completed in 50 ms
+INFO : org.springframework.test.web.servlet.TestDispatcherServlet - FrameworkServlet &apos;&apos;: initialization completed in 33 ms
 </system-out>
   </testcase>
-  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="givenWac_whenServletContext_thenItProvidesGreetController" time="0.009"/>
-  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="editForm" time="0.147"/>
+  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="givenWac_whenServletContext_thenItProvidesGreetController" time="0.001"/>
+  <testcase classname="com.tecsup.labspring.controller.EmployeeControllerIntegrationTest" name="editForm" time="0.242"/>
 </testsuite>
