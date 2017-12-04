@@ -13,7 +13,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="col-md-6">
@@ -47,7 +46,6 @@
 						<form:input path="role.roleId" class="form-control"/>
 					</div>
 					
-						
 					<div class="form-group">
 						<input type="submit" value="Save" class="btn btn-success" />
 						<a href="<%=request.getContextPath()%>/admin/emp/list" class="btn btn-danger">Cancel</a>
