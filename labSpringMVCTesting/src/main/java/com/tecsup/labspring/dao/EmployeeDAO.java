@@ -6,6 +6,8 @@ import com.tecsup.labspring.exception.DAOException;
 import com.tecsup.labspring.exception.EmptyResultException;
 import com.tecsup.labspring.exception.LoginException;
 import com.tecsup.labspring.model.Employee;
+import com.tecsup.labspring.model.EmployeeRoles;
+import com.tecsup.labspring.model.Role;
 
 public interface EmployeeDAO {
 
@@ -19,19 +21,26 @@ public interface EmployeeDAO {
 	void update(String login, String password, String lastname, String firstname, int salary, int dptId) throws DAOException;
 
 	Employee findEmployeeByLogin(String login) throws DAOException, EmptyResultException;
+	
+	Employee isEmployeeExist(String login)throws DAOException, EmptyResultException;
 
 	List<Employee> findAllEmployees() throws DAOException, EmptyResultException;
 
 	List<Employee> findEmployeesByName(String name) throws DAOException, EmptyResultException;
 	
-	
 	List<Employee> findEmployeesByNameLastnameSalary(String name,String lastname, int salary) throws DAOException, EmptyResultException;
-	
 	
 	
 	List<Employee> findEmployeeLastName(String lastname) throws DAOException, EmptyResultException;
 	
 	Employee validate(String login, String pwd) throws LoginException, DAOException;
+
+	
+	void addRole(String login, String roleId) throws DAOException;
+	
+	void editRole(String roleId, String login)throws DAOException;
+	
+	void deleterole(String login) throws DAOException;
 
 
 }

@@ -1,5 +1,5 @@
 package com.tecsup.labspring.controller;
-
+/*
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -92,3 +92,4 @@ mockMvc.perform(get("/admin/emp/editform/100"))
 
 	
 }
+*/

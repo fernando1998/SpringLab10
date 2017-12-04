@@ -15,7 +15,10 @@ package com.tecsup.labspring.dao.jdbc;
 	import com.tecsup.labspring.exception.EmptyResultException;
 	import com.tecsup.labspring.exception.LoginException;
 	import com.tecsup.labspring.mapper.EmployeeMapper;
-	import com.tecsup.labspring.model.Employee;
+import com.tecsup.labspring.mapper.RoleMapper;
+import com.tecsup.labspring.model.Employee;
+import com.tecsup.labspring.model.EmployeeRoles;
+import com.tecsup.labspring.model.Role;
 
 	@Repository
 	public class EmployeeDAOImpl implements EmployeeDAO {
@@ -29,8 +32,8 @@ package com.tecsup.labspring.dao.jdbc;
 		@Override
 		public Employee findEmployee(int employee_id) throws DAOException, EmptyResultException {
 
-			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees WHERE employee_id = ?";
-
+			String query = "SELECT employees.employee_id,employees.LOGIN,employees.PASSWORD,employees.FIRST_NAME,employees.LAST_NAME,employees.SALARY,employees.DEPARTMENT_ID,employees_roles.role FROM `employees` INNER JOIN employees_roles on employees_roles.login=employees.LOGIN WHERE employees.EMPLOYEE_ID = ?";
+			
 			Object[] params = new Object[] { employee_id };
 
 			try {
@@ -108,7 +111,8 @@ package com.tecsup.labspring.dao.jdbc;
 		@Override
 		public Employee findEmployeeByLogin(String login) throws DAOException, EmptyResultException {
 
-			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees WHERE login = ? ";
+			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id"+ 
+			"FROM employees WHERE login = ? ";
 
 			Object[] params = new Object[] { login };
 
@@ -128,9 +132,11 @@ package com.tecsup.labspring.dao.jdbc;
 		
 		@Override
 		public List<Employee> findAllEmployees() throws DAOException, EmptyResultException {
+			//Antiguo
+			//String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees ";
 
-			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees ";
-
+			String query = "SELECT employees.employee_id,employees.LOGIN,employees.PASSWORD,employees.FIRST_NAME,employees.LAST_NAME,employees.SALARY,employees.DEPARTMENT_ID,employees_roles.role FROM `employees` INNER JOIN employees_roles on employees_roles.login=employees.LOGIN";
+			
 			try {
 
 				List<Employee> employees = jdbcTemplate.query(query, new EmployeeMapper());
@@ -243,10 +249,86 @@ package com.tecsup.labspring.dao.jdbc;
 				throw new DAOException(e.getMessage());
 			}
 		}
+
+
+		@Override
+		public Employee isEmployeeExist(String login) throws DAOException, EmptyResultException {
+			String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees WHERE login = ? ";
+
+			Object[] params = new Object[] { login };
+
+			try {
+
+				Employee employee = jdbcTemplate.queryForObject(query, params, new EmployeeMapper());
+				//
+				return employee;
+
+			} catch (EmptyResultDataAccessException e) {
+				throw new EmptyResultException();
+			} catch (Exception e) {
+				logger.info("Error: " + e.getMessage());
+				throw new DAOException(e.getMessage());
+			}
+		}
+		@Override
+		public void addRole(String login, String roleId) throws DAOException {
+
+			String query = "INSERT INTO employees_roles (login, role)  VALUES ( ?,? )";
+
+			Object[] params = new Object[] { login, roleId };
+
+
+			try {
+				// create
+				jdbcTemplate.update(query, params);
+
+			} catch (Exception e) {
+				logger.error("Error: " + e.getMessage());
+				throw new DAOException(e.getMessage());
+			}
+
+		}
+
+
+		@Override
+		public void editRole(String roleId, String login) throws DAOException {
+			
+			String query = "UPDATE employees_roles SET role = ?  WHERE login = ?";
+
+			Object[] params = new Object[] { roleId, login };
+
+
+			try {
+				// create
+				jdbcTemplate.update(query, params);
+
+			} catch (Exception e) {
+				logger.error("Error: " + e.getMessage());
+				throw new DAOException(e.getMessage());
+			}
+			
+		}
+
+
+		@Override
+		public void deleterole(String login) throws DAOException {
+			String query = "DELETE FROM  employees_roles WHERE login = ? ";
+
+			Object[] params = new Object[] { login };
+
+			try {
+				jdbcTemplate.update(query, params);
+			} catch (Exception e) {
+				logger.info("Error: " + e.getMessage());
+				throw new DAOException(e.getMessage());
+			}
+			
+		}
 		
+
+			
+	}
+
+
 	
-
-
 		
-		
-}

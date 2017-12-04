@@ -1,5 +1,5 @@
 package com.tecsup.labspring.dao;
-
+/*
 import static org.junit.Assert.fail;
 
 import java.util.List;
@@ -116,7 +116,7 @@ public class EmployeeDAOTest {
 
 	}
 
-	@Test
+	/*@Test
 	public void testCreateEmployee() {
 
 		String LOGIN = "aromero" + (int) (Math.random() * 100);
@@ -216,8 +216,8 @@ public class EmployeeDAOTest {
 			return;
 		}
 
-	}
-
+	}*/
+/*
 	@After
 	public void after() {
 		logger.info("Despues de cada metodo");
@@ -228,4 +228,4 @@ public class EmployeeDAOTest {
 		logger.info("Despues de todos los metodos");
 	}
 
-}
+}*/

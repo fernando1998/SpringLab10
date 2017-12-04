@@ -35,8 +35,11 @@
 							<th>Lastname</th>
 							<th>Salary</th>
 							<th>Dept</th>
+							<th>Role</th>
 							<th>Edit</th>
 							<th>Delete</th>
+							<th>Edit-Role</th>
+							<th>Delete-Role</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -50,11 +53,13 @@
 								<td>${emp.salary}</td>
 								<td>								
 									<c:forEach var="entry" items="${departmentList}">        
-									      <c:if test="${entry.key == emp.department.departmentId}">
+									      <c:if test="${entry.key == emp.role.roleId}">
 									           ${entry.value}
 									      </c:if>
 									</c:forEach>
 								</td>
+								<td>${emp.role.roleId}</td>
+								
 								<td><a
 									href="<%=request.getContextPath()%>/admin/emp/editform/${emp.employeeId}"
 									class="btn btn-info btn-xs"> <i
@@ -65,6 +70,17 @@
 									class="btn btn-danger btn-xs"> <i
 										class="glyphicon glyphicon-trash"></i> Delete
 								</a></td>
+								<td><a
+									href="<%=request.getContextPath()%>/admin/emp/role/editformrole/${emp.employeeId}"
+									class="btn btn-info btn-xs"> <i
+										class="glyphicon glyphicon-check"></i>Edit-Role
+								</a></td>
+								<td><a
+									href="<%=request.getContextPath()%>/admin/emp/role/deleteformrole/${emp.employeeId}"
+									class="btn btn-danger btn-xs"> <i
+										class="glyphicon glyphicon-trash"></i> Delete-role
+								</a></td>
+								
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -72,6 +88,10 @@
 				<br /> <a href="<%=request.getContextPath()%>/admin/emp/createform"
 					class="btn btn-success"><i class="glyphicon glyphicon-edit"></i>
 					Create Employee</a>
+					<a href="<%=request.getContextPath()%>/admin/emp/createformWithRole"
+					class="btn btn-success"><i class="glyphicon glyphicon-edit"></i>
+					Create Employee With Role</a>	
+					
 					<a href="<%=request.getContextPath()%>/user/menu"
 					class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>
 					Menu</a>

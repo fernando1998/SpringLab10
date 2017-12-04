@@ -9,6 +9,8 @@ public class Employee {
 	int salary;
 
 	
+	Role role=new Role();
+	
 	/**
 	 * 
 	 * @param login
@@ -76,6 +78,16 @@ public class Employee {
 
 	public void setSalary(int salary) {
 		this.salary = salary;
+	}
+
+	
+	
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 	@Override
